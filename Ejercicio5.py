@@ -1,6 +1,11 @@
 import tkinter as tk
 from tkinter import messagebox
 
+# Recupera los datos ingresados en los campos de entrada usando get() de las variables StringVar.
+#Compila los datos en un diccionario.
+#Crea un mensaje que lista todos los datos.
+# Muestra el mensaje en un cuadro de diálogo emergente.
+
 def guardar_datos():
     """ Guarda los datos ingresados y muestra un mensaje de confirmación. """
     datos = {
@@ -15,6 +20,9 @@ def guardar_datos():
         "Fecha de Nacimiento": fecha_nacimiento_var.get(),
         "Estado Civil": estado_civil_var.get()
     }
+
+# Similar a guardar_datos(), pero en lugar de guardar los datos, 
+# muestra los datos actuales ingresados en un cuadro de diálogo emergente.
     
     mensaje = "\n".join([f"{key}: {value}" for key, value in datos.items()])
     messagebox.showinfo("Datos Guardados", mensaje)
