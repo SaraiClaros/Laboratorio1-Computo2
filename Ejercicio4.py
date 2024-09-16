@@ -1,12 +1,17 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 
+# Esta función se encarga de actualizar los campos de entrada (Nombre, Edad, Raza) 
+# con la información de la mascota seleccionada en el combobox.
+
 def actualizar_campos(mascota_seleccionada):
     """ Actualiza los campos de entrada según la mascota seleccionada. """
     index = mascotas_opciones.index(mascota_seleccionada)
     nombre_var.set(entry_nombre[index].get())
     edad_var.set(entry_edad[index].get())
     tipo_var.set(entry_tipo[index].get())
+
+# Guarda los datos ingresados en los campos de texto para la mascota seleccionada.
 
 def guardar_datos():
     """ Guarda los datos ingresados para la mascota seleccionada. """
@@ -16,6 +21,7 @@ def guardar_datos():
     entry_edad[index].set(edad_var.get())
     entry_tipo[index].set(tipo_var.get())
     messagebox.showinfo("Información Guardada", f"Datos guardados para {mascota_seleccionada}.")
+# Muestra los datos actuales de la mascota seleccionada en una ventana emergente.
 
 def mostrar_datos():
     """ Muestra los datos actuales de la mascota seleccionada. """
@@ -26,6 +32,9 @@ def mostrar_datos():
         edad = entry_edad[index].get()
         tipo = entry_tipo[index].get()
         messagebox.showinfo("Datos de la Mascota", f"Nombre: {nombre}\nEdad: {edad}\nTipo: {tipo}")
+        
+# Recorre cada opción en mascotas_opciones, recupera los datos correspondientes de las listas entry_nombre, 
+# entry_edad, y entry_tipo, y los agrega a una lista de cadenas.
 
 def mostrar_todos_los_datos():
     """ Muestra los datos de todas las mascotas. """
